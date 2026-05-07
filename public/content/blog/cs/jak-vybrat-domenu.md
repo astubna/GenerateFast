@@ -51,7 +51,7 @@ Vaše doména by měla být **snadno čitelná a vyslovitelná**. Vyhněte se:
 - Neobvyklým kombinacím znaků
 - Neobvyklým slovům
 - Číslům, která by se dala zaměnit s písmeny (0/O, 1/I, 5/S)
-- Pomlčkám (jsou zastarané a matoucí)
+- Pomlčkám (jsou zastaralé a matoucí)
 
 Pokud někdo slyší vaši doménu jednou, měl by ji umět správně napsat.
 
@@ -135,13 +135,13 @@ Nemodifikujte jen malinko doménu konkurenta. Google bude lépe hodnotit origin�
 ### ❌ Chyba #2: Používání čísel a pomlček
 
 - MojeFirma2.cz → Matoucí
-- Moje-Firma.cz → Zastarané, těžší zapamatovatelnost
+- Moje-Firma.cz → Zastaralé, těžší zapamatovatelnost
 
 Držte se pouze písmen.
 
 ### ❌ Chyba #3: Ignorování volby .cz (nebo .com pro mezinárodní přesah)
 
-Kyž je vaše ideální doména obsazena v .cz, zkuste:
+Když je vaše ideální doména obsazena v .cz, zkuste:
 1. Koupit ji od současného majitele (často levnější, než si myslíte)
 2. Zvolit jiné jméno, které je dostupné v .cz
 3. Použít .com nebo jinou koncovku jako druhou volbu
@@ -156,7 +156,7 @@ Vaša doména by se měla shodovat (nebo být podobná) vašim profilům na soci
 
 Ověřte dostupnost na sociálních médiích PŘED nákupem domény.
 
-### ❌ Chyba #5: Nákup příliš pnoha variant
+### ❌ Chyba #5: Nákup příliš mnoha variant
 
 Nekupujte 50 variant vaší domény. Vyberte si JEDNU hlavní doménu a chraňte:
 - Vaši primární doménu (např. Bazos.cz)

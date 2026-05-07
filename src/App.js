@@ -20,6 +20,8 @@ import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 // ========================================================
 // ✅ SECURE VERSION - API calls go through PHP proxy
@@ -252,7 +254,7 @@ const T = {
     footerContact: "Contact",
     footerEmail: "Email",
     footerGitHub: "GitHub",
-    footerCopyright: "© 2024 GenerateFast. All rights reserved.",
+    footerCopyright: "© 2026 GenerateFast. All rights reserved.",
     footerBuiltWith: "Built with ❤️ and AI",
   },
   sk: {
@@ -347,12 +349,12 @@ const T = {
     footerAboutDesc: "Generátor doménových mien poháňaný AI pre váš biznis",
     footerQuickLinks: "Rýchle odkazy",
     footerHome: "Domov",
-    footerPrivacy: "Politika ochrany osobných údajov",
+    footerPrivacy: "Zásady ochrany osobných údajov",
     footerTerms: "Podmienky služby",
     footerContact: "Kontakt",
     footerEmail: "Email",
     footerGitHub: "GitHub",
-    footerCopyright: "© 2024 GenerateFast. Všetky práva vyhradené.",
+    footerCopyright: "© 2026 GenerateFast. Všetky práva vyhradené.",
     footerBuiltWith: "Postavené s ❤️ a AI",
   },
   cs: {
@@ -452,7 +454,7 @@ const T = {
     footerContact: "Kontakt",
     footerEmail: "Email",
     footerGitHub: "GitHub",
-    footerCopyright: "© 2024 GenerateFast. Všechna práva vyhrazena.",
+    footerCopyright: "© 2026 GenerateFast. Všechna práva vyhrazena.",
     footerBuiltWith: "Vytvořeno s ❤️ a AI",
   },
 };
@@ -1501,6 +1503,15 @@ export default function App() {
             {/* BLOG STRÁNKY */}
             <Route path="/blog" element={<Blog lang={lang} />} />
             <Route path="/blog/:slug" element={<BlogPost lang={lang} />} />
+            {/* Terms & Privacy Routes with Language Prefix */}
+            <Route path="/terms" element={<Terms lang={lang} />} />
+            <Route path="/privacy" element={<Privacy lang={lang} />} />
+            <Route path="/en/terms" element={<Terms lang="en" />} />
+            <Route path="/sk/terms" element={<Terms lang="sk" />} />
+            <Route path="/cs/terms" element={<Terms lang="cs" />} />
+            <Route path="/en/privacy" element={<Privacy lang="en" />} />
+            <Route path="/sk/privacy" element={<Privacy lang="sk" />} />
+            <Route path="/cs/privacy" element={<Privacy lang="cs" />} />
           </Routes>
         </main>
 
@@ -1713,25 +1724,26 @@ export default function App() {
                   <li>
                     <a
                       href="/"
-                      className="text-gray-400 hover:text-white transition"
+                      className="text-gray-300 hover:text-violet-400 transition"
                     >
                       {t.footerHome}
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/privacy.html"
-                      className="text-gray-400 hover:text-white transition"
+{/* Terms Link - Language Aware */}
+                    <a 
+                      href={lang === 'en' ? '/terms' : `/${lang}/terms`}
+                      className="text-gray-300 hover:text-violet-400 transition"
                     >
-                      {t.footerPrivacy}
+                      {lang === 'en' ? 'Terms' : lang === 'sk' ? 'Podmienky' : 'Podmínky'}
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/terms.html"
-                      className="text-gray-400 hover:text-white transition"
+                    <a 
+                      href={lang === 'en' ? '/privacy' : `/${lang}/privacy`}
+                      className="text-gray-300 hover:text-violet-400 transition"
                     >
-                      {t.footerTerms}
+                      {lang === 'en' ? 'Privacy' : lang === 'sk' ? 'Súkromie' : 'Soukromí'}
                     </a>
                   </li>
                 </ul>
@@ -1742,7 +1754,7 @@ export default function App() {
                   <li>
                     <a
                       href="mailto:contact@generatefast.com"
-                      className="text-gray-400 hover:text-white transition"
+                      className="text-gray-300 hover:text-violet-400 transition"
                     >
                       {t.footerEmail}
                     </a>
@@ -1750,7 +1762,7 @@ export default function App() {
                   <li>
                     <a
                       href="https://github.com"
-                      className="text-gray-400 hover:text-white transition"
+                      className="text-gray-300 hover:text-violet-400 transition"
                     >
                       {t.footerGitHub}
                     </a>
@@ -1763,18 +1775,18 @@ export default function App() {
               <p>{t.footerCopyright}</p>
               <p className="mt-2">
                 {t.footerBuiltWith} |{" "}
-                <a
-                  href="/privacy.html"
-                  className="text-gray-400 hover:text-white"
+                <a 
+                  href={lang === 'en' ? '/terms' : `/${lang}/terms`}
+                  className="text-gray-300 hover:text-violet-400 transition"
                 >
-                  {t.footerPrivacy}
+                  {lang === 'en' ? 'Terms' : lang === 'sk' ? 'Podmienky' : 'Podmínky'}
                 </a>{" "}
                 •{" "}
-                <a
-                  href="/terms.html"
-                  className="text-gray-400 hover:text-white"
+                <a 
+                  href={lang === 'en' ? '/privacy' : `/${lang}/privacy`}
+                  className="text-gray-300 hover:text-violet-400 transition"
                 >
-                  {t.footerTerms}
+                  {lang === 'en' ? 'Privacy' : lang === 'sk' ? 'Súkromie' : 'Soukromí'}
                 </a>
               </p>
             </div>
