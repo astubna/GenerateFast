@@ -351,7 +351,7 @@ const Terms = ({ lang = 'en' }) => {
               </section>
               <p>
                 <Link
-                  to="/sk"
+                  to="/"
                   onClick={() => window.scrollTo(0, 0)}
                   className="text-gray-300 hover:text-violet-400 transition"
                 >
@@ -508,7 +508,7 @@ const Terms = ({ lang = 'en' }) => {
               </section>
               <p>
                 <Link
-                  to="/cs"
+                  to="/"
                   onClick={() => window.scrollTo(0, 0)}
                   className="text-gray-300 hover:text-violet-400 transition"
                 >

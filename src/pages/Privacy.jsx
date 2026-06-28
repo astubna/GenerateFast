@@ -357,7 +357,7 @@ const Privacy = ({ lang = "en" }) => {
               </section>
               <p>
                 <Link
-                  to="/sk"
+                  to="/"
                   onClick={() => window.scrollTo(0, 0)}
                   className="text-gray-300 hover:text-violet-400 transition"
                 >
@@ -524,8 +524,7 @@ const Privacy = ({ lang = "en" }) => {
               </section>
               <p>
                 <Link
-                  to="/cs"
-                  onClick={() => window.scrollTo(0, 0)}
+                  to="/"                  onClick={() => window.scrollTo(0, 0)}
                   className="text-gray-300 hover:text-violet-400 transition"
                 >
                   ← Zpátky na domovskou stránku GenerateFast

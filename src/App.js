@@ -28,6 +28,25 @@ import Privacy from './pages/Privacy';
 // No API keys in frontend code!
 // ========================================================
 
+// Language-specific meta tags
+const metaTagsConfig = {
+  en: {
+    title: 'Generate Domain Names Fast | Powered by AI - GenerateFast',
+    description: 'Find Your Perfect Domain Name! AI analyzes your business and generates smart, brandable domain names in seconds.',
+    keywords: 'domain, domains, domain name, domain names, domain generator, domain name generator, AI domain generator, generate domain fast, domain availability checker, brandable domains, startup domain names'
+  },
+  sk: {
+    title: 'Generujte si názvy domén rýchlo a jednoducho | Poháňané AI - GenerateFast',
+    description: 'Nájdite svoju perfektnú doménu! AI analyzuje váš biznis a generuje inteligentné, brandovateľné názvy domén za sekundy.',
+    keywords: 'doména, domény, názov domény, názvy domén, generátor domén, generátor názvov domén, AI generátor domén, generovať doménu rýchlo, kontrola dostupnosti domény, brandovateľné domény, názvy domén pre startupy'
+  },
+  cs: {
+    title: 'Generujte jména domén rychle a jednoduše | Poháněno AI - GenerateFast',
+    description: 'Najděte svou  perfektní doménu! AI analyzuje vaše podnikání a generuje chytrá, brandovatelná jména domén v sekundách.',
+    keywords: 'doména, domény, jméno domény, jména domén, generátor domén, generátor jmen domén, AI generátor domén, generovat doménu rychle, kontrola dostupnosti domény, brandovatelné domény, jména domén pro startupy'
+  }
+};
+
 const TLDS = [
   ".com",
   ".io",
@@ -600,7 +619,7 @@ export default function App() {
   const [copied, setCopied] = useState(null);
   const [verifyingMap, setVerifyingMap] = useState({});
 
-  // ========================================================
+    // ========================================================
   // COOKIE CONSENT STATES
   // ========================================================
   const [showCookieBanner, setShowCookieBanner] = useState(() => {
@@ -810,6 +829,40 @@ export default function App() {
 
     canonicalLink.href = canonicalUrl;
   }, [lang]);
+
+// Update meta tags when language changes
+useEffect(() => {
+  // Update page title
+  document.title = metaTagsConfig[lang].title;
+  
+  // Update or create meta description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.name = 'description';
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.content = metaTagsConfig[lang].description;
+  
+  // Update or create meta keywords
+  let metaKeywords = document.querySelector('meta[name="keywords"]');
+  if (!metaKeywords) {
+    metaKeywords = document.createElement('meta');
+    metaKeywords.name = 'keywords';
+    document.head.appendChild(metaKeywords);
+  }
+  metaKeywords.content = metaTagsConfig[lang].keywords;
+  
+  // Update canonical URL
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    document.head.appendChild(canonical);
+  }
+  canonical.href = lang === 'en' ? 'https://generatefast.com/' : `https://generatefast.com/${lang}`;
+  
+}, [lang]);
 
   return (
     <Router>
